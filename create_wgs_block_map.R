@@ -5,9 +5,9 @@
 #chromosome 10, which have 5kb blocks. The function creates a table which functions as map of exact coordinates contained by 
 #each WGS block.
 
-create_wgs_chunk_map <- function(chunk_index_filepath){
+create_wgs_block_map <- function(block_index_filepath){
   
-  index = read.table(chunk_index_filepath,header=T,sep="\t")
+  index = read.table(block_index_filepath,header=T,sep="\t")
   index[,"LAST_BLOCK"] = gsub("b","",index[,"LAST_BLOCK"])
   index[,"LAST_BLOCK"] = as.numeric(index[,"LAST_BLOCK"])
   
@@ -68,6 +68,6 @@ create_wgs_chunk_map <- function(chunk_index_filepath){
       file_name = c(file_name,fn)
     }
   }
-  chunk_map = cbind(chr,start,end,wgs_block,file_name)
-  write.table(chunk_map,"WGS_200k_block_map.tsv",col.names=T,row.names=F,sep="\t")
+  block_map = cbind(chr,start,end,wgs_block,file_name)
+  write.table(block_map,"WGS_200k_block_map.tsv",col.names=T,row.names=F,sep="\t")
   }
