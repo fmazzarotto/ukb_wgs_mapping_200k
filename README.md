@@ -1,4 +1,4 @@
-# ukb_wgs_mapping
+# ukb_wgs_mapping_200k
 This repo contains a map of the genomic coordinates for each WGS VCF block of the 200k WGS UK Biobank release, and the code used to create it.
 
 The R script file "create_wgs_chunk_map.R" contains a single function which takes a table with three columns as input ("n_blocks_bases_per_chr.csv"). 
